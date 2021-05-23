@@ -1,3 +1,16 @@
+/*
+Object Structural: Adapter
+
+“Convert the interface of a class into another interface clients expect.
+Adapter lets classes work together that couldn’t otherwise because of
+incompatible interfaces.”
+
+Excerpt From: “Design Patterns: Elements of Reusable Object-Oriented Software”.
+
+In this program, we make the our image node conform(adapt) to our node interface
+by enclosing the standar library image operations inside a wrapper.
+*/
+
 package main
 
 import(

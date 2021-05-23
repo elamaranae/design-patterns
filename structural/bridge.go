@@ -1,12 +1,14 @@
 /*
-use_case: 1. we want to decouple abstraction from implementation
-          2. reduce proliferation of classes from nxn to n+n
+Object Structural: Bridge
 
-example   1. create browser specific extensions and logger where implementations
-             are different for each browser but interface is the same
+“Decouple an abstraction from its implementation so that the two can vary
+independently.”
 
-benifits  1. clients need not re-compile when implementation detail is changed
-          2. can change factories at runtime and create different family of components.
+Excerpt From: “Design Patterns: Elements of Reusable Object-Oriented Software (Joanne Romanovich's Library)”.
+
+In this program, we implement logger and extensions for different browsers. But, instead of creating an object
+for each combination (NxN), we specify the behaviour as operations on browser implementors. This reduces the
+total objects to (N+N).
 */
 
 package main
@@ -49,16 +51,16 @@ type extension struct {
   component
 }
 
+type logger struct {
+  component
+}
+
 func (e extension) doExtensionWork() string {
   return e.imp.doSomething()
 }
 
 func (e logger) log() string {
   return e.imp.log()
-}
-
-type logger struct {
-  component
 }
 
 func main() {

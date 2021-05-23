@@ -1,3 +1,16 @@
+/*
+Object Structural: Composite
+
+“Compose objects into tree structures to represent part-whole hierarchies.
+Composite lets clients treat individual objects and compositions of objects
+uniformly.”
+
+Excerpt From: “Design Patterns: Elements of Reusable Object-Oriented Software”.
+
+In this program, we create primitive drawing objects and composite drawing objects
+and let the client work on all of them without having to disinguish between them.
+*/
+
 package main
 
 import(

@@ -1,3 +1,15 @@
+/*
+Object Behavioral: Memento
+
+“Without violating encapsulation, capture and externalize an object’s internal
+state so that the object can be restored to this state later.”
+
+Excerpt From: “Design Patterns: Elements of Reusable Object-Oriented Software”.
+
+In this program, we allow the client to preserve the complete state of the originator object
+without allowing the client to access its internal state using a memento object.
+*/
+
 package main
 
 import(

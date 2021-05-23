@@ -1,3 +1,15 @@
+/*
+Object Structural: Decorator
+
+“Attach additional responsibilities to an object dynamically. Decorators
+provide a flexible alternative to subclassing for extending functionality.”
+
+Excerpt From: “Design Patterns: Elements of Reusable Object-Oriented Software”.
+
+In this program, we define text decorators that can be used to perform additional
+optional operations dynamically.
+*/
+
 package main
 
 import(

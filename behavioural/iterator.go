@@ -1,3 +1,15 @@
+/*
+Object Behavioral: Iterator
+
+“Provide a way to access the elements of an aggregate object sequentially
+without exposing its underlying representation.”
+
+Excerpt From: “Design Patterns: Elements of Reusable Object-Oriented Software"
+
+In this program, we create a custom iterator type for a custom list type by
+conforming to a more general list and iterator interfaces.
+*/
+
 package main
 
 import(

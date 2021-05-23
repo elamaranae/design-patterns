@@ -1,3 +1,18 @@
+/*
+Object Behavioral: Mediator
+
+“Define an object that encapsulates how a set of objects interact. Mediator
+promotes loose coupling by keeping objects from referring to each other
+explicitly, and it lets you vary their interaction independently.”
+
+Excerpt From: “Design Patterns: Elements of Reusable Object-Oriented Software”
+
+In this program, we implement a mediator that co-ordinates interactions between
+multiple ui elements and show an example interaction where clicking on the
+checkbox automatically presses a button while keeping the button and checkbox
+unaware of each other.
+*/
+
 package main
 
 import(
@@ -11,6 +26,19 @@ type widget interface {
 type mediator interface {
   createWidgets()
   handleChanged(widget)
+}
+
+type button struct {
+  director mediator
+}
+
+type list struct {
+  director mediator
+}
+
+type checkbox struct {
+  director mediator
+  state bool
 }
 
 type director struct {
@@ -50,19 +78,6 @@ func (c checkbox) changed() {
 
 func (l list) changed() {
   l.director.handleChanged(l)
-}
-
-type button struct {
-  director mediator
-}
-
-type list struct {
-  director mediator
-}
-
-type checkbox struct {
-  director mediator
-  state bool
 }
 
 func (c checkbox) check() {

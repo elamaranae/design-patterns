@@ -1,3 +1,15 @@
+/*
+Object Behavioral: Observe
+
+“Define a one-to-many dependency between objects so that when one object
+changes state, all its dependents are notified and updated automatically.”
+
+Excerpt From: “Design Patterns: Elements of Reusable Object-Oriented Software”.
+
+In this program, we create one subject and two observer observing the subject 
+all experiment by updating the subject.
+*/
+
 package main
 
 import(

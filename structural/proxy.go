@@ -1,3 +1,14 @@
+/*
+Object Structural: Proxy
+
+“Provide a surrogate or placeholder for another object to control access to it.”
+
+Excerpt From: “Design Patterns: Elements of Reusable Object-Oriented Software”.
+
+In this program, we create a proxy object to represent an image whenever an image
+needs to be created. The proxy only loads the actual image only when its needed.
+*/
+
 package main
 
 import(
@@ -36,10 +47,8 @@ func (i imageProxy) draw() {
 }
 
 func main() {
-  directImage := NewImage("haha.jpg")
-  // directImage.draw()
+  // here image is not yet loaded
   proxyImage := imageProxy{filename: "haha.jpg"}
-  fmt.Println(proxyImage)
-  fmt.Println(directImage)
-  // proxyImage.draw()
+  // it's lazily loaded only when we call draw on it
+  proxyImage.draw()
 }

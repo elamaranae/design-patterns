@@ -1,3 +1,16 @@
+/*
+Object Behavioral: Command
+
+“Encapsulate a request as an object, thereby letting you parameterize clients
+with different requests, queue or log requests, and support undoable
+operations.”
+
+Excerpt From: “Design Patterns: Elements of Reusable Object-Oriented Software".
+
+In this program, we make paste operation into a class that responds to execute
+and also create a macro command(composite command) that calls sequence of commands.
+*/
+
 package main
 
 import(

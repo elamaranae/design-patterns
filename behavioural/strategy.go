@@ -1,3 +1,16 @@
+/*
+Object Behavioral: Strategy
+
+“Define a family of algorithms, encapsulate each one, and make them
+interchangeable. Strategy lets the algorithm vary independently from clients
+that use it.”
+
+Excerpt From: “Design Patterns: Elements of Reusable Object-Oriented Software”.
+
+In this program, we allow the client to specify the sorting algoritm to use
+by just swapping out an object.
+*/
+
 package main
 
 import(

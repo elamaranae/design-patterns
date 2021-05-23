@@ -1,3 +1,17 @@
+/*
+Object Behavioral: Visitor
+
+“Represent an operation to be performed on the elements of an object structure.
+Visitor lets you define a new operation without changing the classes of the
+elements on which it operates.”
+
+Excerpt From: “Design Patterns: Elements of Reusable Object-Oriented Software”.
+
+In this program, we try to represent a Nodes in an AST and implement parse and
+compile operations without having to pollute the nodes themselves. It has an
+added advantage that all related operations comes under single type.
+*/
+
 package main
 
 import(

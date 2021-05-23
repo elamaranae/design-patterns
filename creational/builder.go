@@ -1,11 +1,15 @@
 /*
-use_case: 1. build an object step by step as opposed to building in one shot
-          2. resulting object can be of different representations and interface
+Object Creational: Builder
 
-example:  given a series of rich text lines (presumably taken from a rich text
-          document), we will build corresponding htmlDocument and markdownDocument
-          continuosly.
+“Separate the construction of a complex object from its representation so that
+the same construction process can create different representations.”
+
+Excerpt From: “Design Patterns: Elements of Reusable Object-Oriented Software”.
+
+In this program, we create a builders that can build a html document and markdown
+documents form rich text incrementally.
 */
+
 
 package main
 
@@ -50,17 +54,12 @@ type markdownLine struct {
 */
 type builder interface {
   buildLine(line richTextLine)
-  summa()
 }
 
 /* default builder exists to provide default implementation
    of the methods and acts as the "interface" mentioned in GOF book*/
 type defaultBuilder struct {}
 func (builder defaultBuilder) buildLine(line richTextLine) {}
-
-func (builder defaultBuilder) summa() {
-  fmt.Println("summa is called")
-}
 
 /* concreate builder objects composes DefaultBuilder to get the
    default implementations */
@@ -126,12 +125,6 @@ func (builder markdownBuilder) getDocument() markdownDocument {
   return builder.document
 }
 
-/* overriding summa method for only htmlBuilder only to demonstrate that 
-   builder need not have same interface, just default implementations of
-   builder interface and can have specialized methods for each builder */
-func (builder htmlBuilder) summa() {
-  fmt.Println("overriden summa")
-}
 
 func main() {
   htmlBuilder := htmlBuilder{}
@@ -154,11 +147,6 @@ func main() {
 
   htmlDocument := htmlBuilder.getDocument()
   markdownDocument := markdownBuilder.getDocument()
-
-  /* should call overriden summa*/
-  htmlBuilder.summa()
-  /* should call default summa*/
-  markdownBuilder.summa()
 
   fmt.Println(htmlDocument)
   fmt.Println(markdownDocument)

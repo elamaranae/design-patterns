@@ -1,18 +1,14 @@
 /*
-note:     this pattern is similar to abstrace factory in that they both use factory
-          methods that implement a interface to create and return objects, but this
-          pattern delegates creation to a concreate subclass's method through inheritance,
-          where abstract factory pattern delegates creation to a separate factory object
-          through composition.
-use_case: 1. create browser components as objects for an application
-          2. implementations vary for each component in each browser
-          3. object should be created completely and returned
-          4. object doesn't know which type component to create explicitly
+Object Creational: Factory Method
 
-example   1. create browser specific extensions and logger where implementations
-             are different for each browser but interface is the same
+“Define an interface for creating an object, but let subclasses decide which
+class to instantiate. Factory Method lets a class defer instantiation to
+subclasses.”
 
-benifits  1. type of component created is delegated to the subclass
+Excerpt From: “Design Patterns: Elements of Reusable Object-Oriented Software”.
+
+In this program, we define an interface to create and return browser components and
+let individual browsers implement it accordingly.
 */
 
 package main

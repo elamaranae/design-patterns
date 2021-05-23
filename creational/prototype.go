@@ -1,13 +1,13 @@
 /*
-use_case: 1. create browser components as objects for an application
-          2. implementations vary for each component in each browser
-          3. object should be created in one step and returned
+Object Creational: Prototype
 
-example   1. create browser specific extensions and logger where implementations
-             are different for each browser but interface is the same
+“Specify the kinds of objects to create using a prototypical instance, and
+create new objects by copying this prototype.”
 
-benifits  1. need not have separate concreate factory classes for each browser type
-          2. a prototype is passed as parameter to the factory to determine the type
+Excerpt From: “Design Patterns: Elements of Reusable Object-Oriented Software”.
+
+In this program, we create a prototype factory by intializing it with prototypical
+instances. This factory creates objects by cloning these prototypes.
 */
 
 package main
@@ -29,12 +29,6 @@ type firefoxExtension struct {}
 type chromiumLogger struct {}
 type firefoxLogger struct {}
 
-/* factory interface */
-type browserFactory interface {
-  createExtension() extension
-  createLogger() logger
-}
-
 /* component interface */
 type extension interface {
   doExtensionWork() string
@@ -46,7 +40,6 @@ type logger interface {
   clone() logger
 }
 
-/* concrete implementation of browserFactory interface */
 func (factory browserPrototypeFactory) createExtension() extension {
   return factory.extension.clone()
 }

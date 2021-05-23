@@ -1,3 +1,15 @@
+/*
+Object Structural: Flyweight
+
+“Use sharing to support large numbers of fine-grained objects efficiently.”
+
+Excerpt From: “Design Patterns: Elements of Reusable Object-Oriented Software”.
+
+In this program, we create an object to represent each character and reuse the
+character object each time the character is repeated by passing the position
+as argument to its operation.
+*/
+
 package main
 
 import(
@@ -8,11 +20,13 @@ type glyph interface{
   draw(glyphContext)
 }
 
+// extrinsic changing state
 type glyphContext struct{
   row int
   col int
 }
 
+// intrinsic reusable state
 type character struct{
   code byte
 }
@@ -30,15 +44,15 @@ func (g *glyphFactory) createCharacter(code byte) *character {
   return g.alphabets[index]
 }
 
-func (c character) draw(g glyphContext) {
-  fmt.Printf("object_id = %p -- renders '%v' at (%v,%v)\n", &c, string(c.code), g.row, g.col)
+func (c *character) draw(g glyphContext) {
+  fmt.Printf("object_id = %p -- renders '%v' at (%v,%v)\n", c, string(c.code), g.row, g.col)
 }
 
 func main() {
   factory := glyphFactory{}
   a1 := factory.createCharacter('a')
   a2 := factory.createCharacter('a')
-  a1.code = 5
+  // a1.code = 5
   a3 := factory.createCharacter('a')
   c1 := factory.createCharacter('c')
   fmt.Printf("%p\n", a3)

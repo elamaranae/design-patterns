@@ -1,3 +1,15 @@
+/*
+Object Structural: Facade
+
+“Provide a unified interface to a set of interfaces in a subsystem. Facade
+defines a higher-level interface that makes the subsystem easier to use”
+
+Excerpt From: “Design Patterns: Elements of Reusable Object-Oriented Software”.
+
+In this program, we provide the compiler a unified interface 'compile' that
+acts as a 'facade' hiding the internal compiler subsystems.
+*/
+
 package main
 
 import(

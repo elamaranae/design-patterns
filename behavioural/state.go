@@ -1,3 +1,15 @@
+/*
+Object Behavioral: State
+
+“Allow an object to alter its behavior when its internal state changes. The
+object will appear to change its class.”
+
+Excerpt From: “Design Patterns: Elements of Reusable Object-Oriented Software”.
+
+In this program, we create tcpConnection object whose behavior changes depending
+of the tcpState is it current in.
+*/
+
 package main
 
 import(
@@ -33,7 +45,7 @@ func (s activeState) handshake(c *tcpConnection) {
 }
 
 func (s inactiveState) handshake(c *tcpConnection) {
-  fmt.Println("doning handshake")
+  fmt.Println("doing handshake")
   c.changeState(activeState{})
 }
 

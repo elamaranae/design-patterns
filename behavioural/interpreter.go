@@ -1,15 +1,27 @@
-package main
-
-import(
-  "fmt"
-)
-
 /*
+Object Behavioral: Interpreter
+
+“Given a language, define a represention for its grammar along with an
+interpreter that uses the representation to interpret sentences in the
+language.”
+
+Excerpt From: “Design Patterns: Elements of Reusable Object-Oriented Software"
+
+In this program, we interpret a expressions with the following grammer rules.
+We produce an AST that represents the grammer and user the pattern to perform
+operations on them.
+
 boolExp -> andExp | orExp | literal
 andExp -> boolExp '&&' boolExp
 orExp -> boolExp '||' boolExp
 literal -> 'true' | 'false'
 */
+
+package main
+
+import(
+  "fmt"
+)
 
 type boolExp interface {
   evaluate() bool
